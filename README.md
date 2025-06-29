@@ -24,6 +24,7 @@ The text below is based on the dataset description found here: https://www.kaggl
 The dataset **D** contains a collection of textual descriptions of neural network models trained and evaluated on the Cifar-10 dataset. Explicitly, the inputs **X** are model hyperparemeters such as architecture layers used, batch size, criterion, number of epochs, etc ... The output regressors **Y** are the associate model performance metrices of these models evaluated on Cifar-10 using the set of criteria from **X**. The dataset can be found in the file train.csv and a 'hidden' test set can be found in test.csv. 
 
 **Some columns of train.csv:**
+
 The following were used as train data:
 - id: identification for the data sample
 - arch_and_hp: model architecture and hyperparameters used with that architecture
