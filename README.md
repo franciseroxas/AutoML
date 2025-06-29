@@ -10,6 +10,8 @@ The general strategy that is emploted is to create a dataset **D** where the tra
 
 This repository exists to document how I and Micheal attempted this process in Tensorflow (and how I subsequently recreated the results in PyTorch).
 
+References:
+
 1. Neural Architecture Optimization, https://arxiv.org/abs/1808.07233
 
 2. Progressive Neural Architecture Search, https://arxiv.org/abs/1712.00559
@@ -42,3 +44,14 @@ The following were considered regressors:
 - train_accs_{0,..,49}: training accuracy for the first 50 epochs
 - train_losses_{0,..,49}: training losses for the first 50 epochs
 
+## About this repo 
+In this repository, there is our original submission in the _tensorFlowVersion_ folder and my second attempt at this many years later in the _Pytorch_ Version folder. 
+
+The datasets used are included in the _Datasets_ folder and copies of the problem description in the _problemDescription_ folder. 
+
+## General approach
+Both approaches took in the input model parameters (text) and fed them through an embedding layer to get a numeric vector. 
+
+Afterwards, the numeric vector was fed through an Long Short Term Memory unit (LSTM) model and then fed to a simple Multi Layer Perceptron (MLP) to get the output regressors. 
+
+The Pytorch version differs from the Tensorflow version by feeding in "non-variable length" model parameters such as criterion, batch size, num epochs, etc... into a seperate MLP. The output of this MLP is concatenated with the output of the LSTM before being fed into one final MLP to obtain the model regressors. 
